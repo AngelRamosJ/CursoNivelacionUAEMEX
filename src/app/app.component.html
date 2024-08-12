@@ -1,0 +1,95 @@
+<div class="vh-100">
+  <header>
+    <div class="container-fluid p-0">
+      <img class="img-fluid" src="./../assets/IMG/Encabezado_UAEM.png" alt="">
+    </div>
+  </header>
+  
+  
+  
+  <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div class="container-fluid navbar-nav d-flex flex-colum justify-content-around mt-2 mb-3">
+          
+          <div class="nav-item px-5">
+            <a class="nav-link  fw-bold pb-0" (click)="mantenLineaInicio()" [routerLink]="['/inicio']" [routerLinkActive]="['actived']">
+              <img class="icono-nav me-2" id="img-inicio" src="./../assets/IMG/inicio.png" alt="">
+            </a>
+            <div id="linea-horizontal-inicio" class="mt-1"></div>
+          </div>
+          
+          <div class="nav-item px-5">
+            <a class="nav-link fw-bold pb-0" id="link-algebra" (click)="mantenLineaAlgebra()" [routerLink]="['/algebra']">
+              <img class="icono-nav me-2" id="img-algebra" src="./../assets/IMG/algebra.png" alt="">Álgebra
+            </a>
+            <div id="linea-horizontal-algebra" class="mt-1"></div>
+          </div>
+          <div class="nav-item px-5">
+            <a class="nav-link fw-bold pb-0" id="link-trigonometria" (click)="mantenLineaTrigonometria()" [routerLink]="['/trigonometria']">
+              <img class="icono-nav me-2" id="img-trigonometria" src="./../assets/IMG/trigonometria.png" alt="">Trigonometría
+            </a>
+            <div id="linea-horizontal-trigonometria" class="mt-1"></div>
+          </div>  
+          <div class="nav-item px-5">
+            <a class="nav-link fw-bold pb-0" id="link-geometria" (click)="mantenLineaGeometria()" [routerLink]="['/geometria']">
+              <img class="icono-nav me-2" id="img-geometria" src="./../assets/IMG/geometrico.png" alt="">Geometría
+            </a>
+            <div id="linea-horizontal-geometria" class="mt-1"></div>
+          </div>
+          <div class="nav-item px-5">
+            <a class="nav-link pb-0" (click)="mantenLineaAyuda()" [routerLink]="['/ayuda']" [routerLinkActive]="['actived']">
+              <img class="icono-nav me-2" id="img-ayuda" src="./../assets/IMG/ayuda.png" alt="">
+            </a>
+            <div id="linea-horizontal-ayuda" class="mt-1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  
+  <footer>
+    <div class="container-fluid p-2 p-lg-5">
+      <div class="row">
+        <div class="col-3">
+          <div class="d-flex justify-content-center">
+            <img class="img-fluid" src="./../assets/IMG/administracion-uaemex.png" alt="">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="fw-bold text-white border-bottom border-3 mb-2">Contacto</div>
+          <div class="text-white"><i class="bi bi-geo-alt-fill me-2"></i>Facultad de Ingeniería UAEM</div>
+          <div class="text-white">Cerro de Coatepec S/N Ciudad Universitaria C.P. 50100. Toluca, Estado de México</div>
+          <div class="text-white mt-2"><i class="bi bi-telephone-fill me-2"></i>Teléfonos: (722) 214 08 55 y 214 07 95</div>
+        </div>
+        <div class="col-3">
+          <div class="fw-bold text-white border-bottom border-3 mb-2">Vínculos de interés</div>
+          <div class="text-white fw-bold"><a class="text-decoration-none" href="https://www.uaemex.mx/" target="_blank"><i class="bi bi-box-arrow-up-right me-2"></i>UAEMéx</a></div>
+          <div class="text-white fw-bold"><a class="text-decoration-none" href="https://fi.uaemex.mx/portal/inicio/home.php" target="_blank"><i class="bi bi-box-arrow-up-right me-2"></i>Facultad de Ingeniería</a></div>
+          <div class="text-white fw-bold"><a class="text-decoration-none" href="https://fi.uaemex.mx/portal/coordinacion/tutoria/index.php" target="_blank"><i class="bi bi-box-arrow-up-right me-2"></i>Coordinación de Tutoría Académica</a></div>
+        </div>
+        <div class="col-3">
+          <div class="fw-bold text-white border-bottom border-3 mb-2">Redes sociales</div>
+          <div class="h-100 d-flex justify-content-center" id="redes-sociales">
+            <a href="https://www.facebook.com/FIUAEM/" target="_blank"><i class="bi bi-facebook text-white me-4"></i></a>
+            <a href="https://www.instagram.com/tutoria_fiuaemex/" target="_blank"><i class="bi bi-instagram text-white me-4"></i></a>
+            <a href="https://twitter.com/fiuaemex?lang=es" target="_blank"><i class="bi bi-twitter text-white me-4"></i></a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="container-fluid p-1 bg-warning d-flex justify-content-center">
+      <span class="text-white">&copy;COPYRIGHT 2022. FACULTAD DE INGENIERÍA. UAEMÉX</span>
+    </div>
+  </footer>
+  
+  
+</div>

@@ -1,0 +1,25 @@
+nav::-webkit-scrollbar{
+    width: 7px;
+    background: rgba(230, 230, 230, 0.87);
+}
+
+nav::-webkit-scrollbar-thumb{
+    background: #4D4000;
+    border-radius: 50px;
+}
+
+#temas{
+    width: 100%;
+}
+
+a:hover{
+    background-color: #679370;
+    color: #ffffff;
+
+}
+
+a:focus{
+    background-color: #679370;
+    color: #ffffff;
+    font-weight: bold;
+}

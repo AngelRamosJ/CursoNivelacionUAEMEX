@@ -1,0 +1,70 @@
+footer > div:first-child{
+    background-image: url('/assets/IMG/pie_de_pagina.png');
+    background-size: 100%;
+}
+
+    
+header img{
+    width: 100%;
+}
+
+footer  img{
+    width: 220px;
+}
+
+.icono-nav{
+    width: 40px;
+    filter: invert(1);
+}
+
+#icono-ayuda{
+    font-size: 35px;
+}
+
+a{
+    color: white;
+}
+
+#redes-sociales i{
+    font-size: 50px;
+}
+
+#linea-horizontal-inicio{
+    background-color: #0A262B;
+    height: 6px;
+    border-radius: 20px;
+    width: 0px;
+    position: absolute;
+}
+
+#linea-horizontal-algebra{
+    background-color: #0A262B;
+    height: 6px;
+    border-radius: 20px;
+    width: 0px;
+    position: absolute;
+}
+
+#linea-horizontal-trigonometria{
+    background-color: #0A262B;
+    height: 6px;
+    border-radius: 20px;
+    width: 0px;
+    position: absolute;
+}
+
+#linea-horizontal-geometria{
+    background-color: #0A262B;
+    height: 6px;
+    border-radius: 20px;
+    width: 0px;
+    position: absolute;
+}
+
+#linea-horizontal-ayuda{
+    background-color: #0A262B;
+    height: 6px;
+    border-radius: 20px;
+    width: 0px;
+    position: absolute;
+}

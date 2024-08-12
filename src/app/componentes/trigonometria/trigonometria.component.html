@@ -1,0 +1,51 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 px-0 bg-success">
+            <nav class="nav navbar-nav-scroll flex-colum" style="--bs-scroll-height: 800px;">
+                
+                <div id="temas" *ngFor="let temaT of temasTrigonometria; let indice1 = index" >
+                    <ng-template [ngIf]="temaT.subtemas.length == 0" [ngIfThen]="temaContenido" [ngIfElse]="temaSubtemas"></ng-template>
+                    <ng-template #temaContenido>
+                        <div class="bg-secondary">
+                            <a class="nav-link col-12 border-bottom border-info" [routerLink]="['/trigonometria/'+temaT.tema]">{{temaT.tema}}</a>
+                        </div>
+                    </ng-template>
+                    <ng-template #temaSubtemas>
+                        <a class="nav-link col-12 border-bottom border-info bg-light text-dark" data-bs-toggle="collapse" role="button" aria-expanded="false" href="#subtemas_N1_{{indice1}}">
+                            {{temaT.tema}}
+                            <button class="btn-close"></button>
+                        </a>
+                        <ng-template [ngIf]="temaT.tag == 'T1'" [ngIfThen]="muestraSubtemas" [ngIfElse]="temasNivel2"></ng-template>
+                        <ng-template #muestraSubtemas>
+                            <div class="collapse border-bottom border-info" id="subtemas_N1_{{indice1}}" *ngFor="let subtemasT of temaT.subtemas" >
+                                <a class="nav-link col-12 ps-5" [routerLink]="['/trigonometria/'+subtemasT]">{{subtemasT}}</a>
+                            </div>
+                        </ng-template>
+                        <ng-template #temasNivel2>
+                            <div class="collapse bg-secondary" id="subtemas_N1_{{indice1}}" *ngFor="let temaT_N2 of temaT.subtemas; let indice2 = index">
+                                <ng-template [ngIf]="temaT_N2.subtemas.length == 0" [ngIfThen]="temaContenido_N2" [ngIfElse]="muestraSubtemas_N2"></ng-template>
+                                <ng-template #temaContenido_N2>
+                                        <a class="nav-link col-12 border-bottom border-info ps-5" [routerLink]="['/trigonometria/'+temaT_N2.tema]">{{temaT_N2.tema}}</a>
+                                </ng-template>
+                                <ng-template #muestraSubtemas_N2>
+                                    <a class="nav-link col-12 border-bottom border-info bg-light text-dark ps-5" data-bs-toggle="collapse" role="button" aria-expanded="false" href="#subtemas_N2_{{indice2}}">
+                                        {{temaT_N2.tema}}
+                                        <button class="btn-close"></button>
+                                    </a>
+                                    <div class="collapse border-bottom border-info" id="subtemas_N2_{{indice2}}" *ngFor="let subtemasT_N2 of temaT_N2.subtemas">
+                                        <a class="nav-link col-12 ps-5" [routerLink]="['/trigonometria/'+subtemasT_N2]"><div class="ps-4">{{subtemasT_N2}}</div></a>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </ng-template>
+                    </ng-template>
+                </div>
+            </nav>
+        </div>  
+        <div class="col-9">
+            <router-outlet></router-outlet>
+        </div>  
+    </div>
+    
+</div>

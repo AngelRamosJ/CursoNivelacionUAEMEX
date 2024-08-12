@@ -1,0 +1,49 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 px-0 bg-success">
+            <nav class="nav navbar-nav-scroll flex-colum" style="--bs-scroll-height: 800px;">
+                
+                <div id="temas" *ngFor="let temaG of temasGeometria; let indice1 = index" >
+                    <ng-template [ngIf]="temaG.subtemas.length == 0" [ngIfThen]="temaContenido" [ngIfElse]="temaSubtemas"></ng-template>
+                    <ng-template #temaContenido>
+                            <a class="nav-link col-12 border-bottom border-info" [routerLink]="['/geometria/'+temaG.tema]">{{temaG.tema}}</a>
+                    </ng-template>
+                    <ng-template #temaSubtemas>
+                        <a class="nav-link col-12 border-bottom border-info bg-light text-dark" data-bs-toggle="collapse" role="button" aria-expanded="false" href="#subtemas_N1_{{indice1}}">
+                            {{temaG.tema}}
+                            <button class="btn-close"></button>
+                        </a>
+                        <ng-template [ngIf]="temaG.tag == 'T1'" [ngIfThen]="muestraSubtemas" [ngIfElse]="temasNivel2"></ng-template>
+                        <ng-template #muestraSubtemas>
+                            <div class="collapse border-bottom border-info" id="subtemas_N1_{{indice1}}" *ngFor="let subtemasG of temaG.subtemas" >
+                                <a class="nav-link col-12 ps-5" [routerLink]="['/geometria/'+subtemasG]">{{subtemasG}}</a>
+                            </div>
+                        </ng-template>
+                        <ng-template #temasNivel2>
+                            <div class="collapse bg-secondary" id="subtemas_N1_{{indice1}}" *ngFor="let temaG_N2 of temaG.subtemas; let indice2 = index">
+                                <ng-template [ngIf]="temaG_N2.subtemas.length == 0" [ngIfThen]="temaContenido_N2" [ngIfElse]="muestraSubtemas_N2"></ng-template>
+                                <ng-template #temaContenido_N2>
+                                        <a class="nav-link col-12 border-bottom border-info ps-5" [routerLink]="['/geometria/'+temaG_N2.tema]">{{temaG_N2.tema}}</a>
+                                </ng-template>
+                                <ng-template #muestraSubtemas_N2>
+                                    <a class="nav-link col-12 border-bottom border-info bg-light text-dark ps-5" data-bs-toggle="collapse" role="button" aria-expanded="false" href="#subtemas_N2_{{indice2}}">
+                                        {{temaG_N2.tema}}
+                                        <button class="btn-close"></button>
+                                    </a>
+                                    <div class="collapse border-bottom border-info" id="subtemas_N2_{{indice2}}" *ngFor="let subtemasG_N2 of temaG_N2.subtemas">
+                                        <a class="nav-link col-12 ps-5" [routerLink]="['/geometria/'+subtemasG_N2]"><div class="ps-4">{{subtemasG_N2}}</div></a>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </ng-template>
+                    </ng-template>
+                </div>
+            </nav>
+        </div>  
+        <div class="col-9">
+            <router-outlet></router-outlet>
+        </div>  
+    </div>
+    
+</div>
